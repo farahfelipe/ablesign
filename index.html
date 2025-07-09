@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FM Fisioterapia e Saúde</title>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8f9fa;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 1.6em;
+      border-bottom: 2px solid #38bdf8;
+      padding-bottom: 5px;
+      color: #38bdf8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+      background-color: #1e293b;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 1.2em;
+      padding: 10px;
+      background-color: #1e293b;
+      color: #facc15;
+      border-top: 2px solid #facc15;
+    }
+  </style>
+</head>
+<body>
+  <h1>📊 Painel Informativo | FM Fisioterapia e Saúde</h1>
+
+  <h2>📈 Bolsas de Valores</h2>
+  <div class="grid">
+    <iframe src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=br#%7B%22symbol%22%3A%22BMFBOVESPA%3AIBOV%22%2C%22colorTheme%22%3A%22dark%22%7D"></iframe>
+    <iframe src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=br#%7B%22symbol%22%3A%22NASDAQ%3ANDX%22%2C%22colorTheme%22%3A%22dark%22%7D"></iframe>
+    <iframe src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=br#%7B%22symbol%22%3A%22DJI%22%2C%22colorTheme%22%3A%22dark%22%7D"></iframe>
+  </div>
+
+  <h2>💱 Cotações de Moedas</h2>
+  <div class="grid">
+    <iframe src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=br#%7B%22symbol%22%3A%22FX_IDC%3AUSDBRL%22%2C%22colorTheme%22%3A%22dark%22%7D"></iframe>
+    <iframe src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=br#%7B%22symbol%22%3A%22FX_IDC%3AEURBRL%22%2C%22colorTheme%22%3A%22dark%22%7D"></iframe>
+  </div>
+
+  <h2>🌤️ Previsão do Tempo (Jardim Paulista - SP)</h2>
+  <div class="grid">
+    <iframe src="https://www.meteoblue.com/pt/clima/widget/daily/s%c3%a3o-paulo_brasil_3448439?geoloc=fixed&days=3&tempunit=C&windunit=kmh&layout=image" allowtransparency="true"></iframe>
+  </div>
+
+  <h2>🕒 Relógio Mundial</h2>
+  <div class="grid">
+    <iframe src="https://free.timeanddate.com/clock/i95uwp3z/n33/tlbr/fn16/fs20/fcfff/tct/pct/ftb/th2" style="height:100px;"></iframe>
+    <iframe src="https://free.timeanddate.com/clock/i95uwp3z/n179/tlbr/fn16/fs20/fcfff/tct/pct/ftb/th2" style="height:100px;"></iframe>
+    <iframe src="https://free.timeanddate.com/clock/i95uwp3z/n136/tlbr/fn16/fs20/fcfff/tct/pct/ftb/th2" style="height:100px;"></iframe>
+    <iframe src="https://free.timeanddate.com/clock/i95uwp3z/n248/tlbr/fn16/fs20/fcfff/tct/pct/ftb/th2" style="height:100px;"></iframe>
+  </div>
+
+  <footer>
+    FM Fisioterapia e Saúde – Cuidando do seu bem-estar com inovação e carinho.
+  </footer>
+</body>
+</html>
