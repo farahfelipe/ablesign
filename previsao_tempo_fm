@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Previsão do Tempo - 5 Dias</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e0f7fa;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #00796b;
+    }
+    .forecast-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .forecast-day {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 150px;
+    }
+    .forecast-day img {
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Previsão do Tempo (5 Dias)</h1>
+  <div class="forecast-container" id="forecast"></div>
+
+  <script>
+    const apiKey = "effedf0c36875049c5e7d249e725128c"; // 🔑 Substitua por sua chave da OpenWeatherMap
+    const cidade = "São Paulo,BR"; // Altere para a cidade desejada
+    const url = https://api.openweathermap.org/data/2.5/forecast?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br;
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const forecastEl = document.getElementById("forecast");
+        const diasExibidos = {};
+
+        data.list.forEach(item => {
+          const dataHora = item.dt_txt;
+          const dataDia = dataHora.split(" ")[0];
+
+          // Mostra apenas 1 previsão por dia (ex: 12:00h)
+          if (!diasExibidos[dataDia] && dataHora.includes("12:00:00")) {
+            diasExibidos[dataDia] = true;
+
+            const card = document.createElement("div");
+            card.className = "forecast-day";
+            card.innerHTML = 
+              <h3>${new Date(dataDia).toLocaleDateString("pt-BR", { weekday: "short", day: "2-digit", month: "2-digit" })}</h3>
+              <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png" alt="${item.weather[0].description}">
+              <p>${item.weather[0].description}</p>
+              <p><strong>${item.main.temp.toFixed(1)}°C</strong></p>
+            ;
+            forecastEl.appendChild(card);
+          }
+        });
+      })
+      .catch(err => {
+        console.error("Erro ao buscar dados do tempo:", err);
+        document.getElementById("forecast").innerHTML = "<p>Não foi possível carregar a previsão do tempo.</p>";
+      });
+  </script>
+</body>
+</html>
